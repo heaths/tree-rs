@@ -1,0 +1,13 @@
+[package]
+name = "tree"
+version = "0.1.0"
+edition = "2021"
+authors = ["Heath Stewart (https://github.com/heaths)"]
+repository = "https://github.com/heaths/tree-rs"
+license = "MIT"
+
+[features]
+default = []
+fs = []
+
+[dependencies]
