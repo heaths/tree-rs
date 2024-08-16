@@ -6,10 +6,29 @@ use std::{
     fmt,
     fs::{DirEntry, ReadDir},
     io,
+    path::PathBuf,
 };
 
 pub struct FileSystemNode {
     entry: DirEntry,
+}
+
+impl FileSystemNode {
+    pub fn path(&self) -> PathBuf {
+        self.entry.path()
+    }
+
+    #[cfg(test)]
+    #[allow(dead_code)]
+    fn is_dir(&self) -> io::Result<bool> {
+        Ok(self.entry.metadata()?.is_dir())
+    }
+
+    #[cfg(test)]
+    #[allow(dead_code)]
+    fn is_file(&self) -> io::Result<bool> {
+        Ok(self.entry.metadata()?.is_file())
+    }
 }
 
 impl fmt::Debug for FileSystemNode {
@@ -81,5 +100,33 @@ impl Iterator for NodeIterator {
         }
 
         None
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::fs::read_dir;
+
+    use super::*;
+
+    #[test]
+    fn has_children() {
+        let mut found_dir = false;
+        let mut found_file = false;
+
+        let dir = NodeIterator(read_dir(env!("CARGO_MANIFEST_DIR")));
+        for node in dir {
+            if node.path().is_dir() {
+                found_dir = true;
+                assert!(node.to_string().ends_with("/"));
+            }
+            if node.path().is_file() {
+                found_file = true;
+                assert!(!node.to_string().ends_with("/"));
+            }
+        }
+
+        assert!(found_dir);
+        assert!(found_file);
     }
 }
