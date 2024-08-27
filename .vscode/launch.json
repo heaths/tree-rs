@@ -18,18 +18,19 @@
     {
       "type": "lldb",
       "request": "launch",
-      "name": "executable",
+      "name": "example: tree",
       "cargo": {
         "args": [
           "build",
-          "--bin=main"
+          "--example=tree",
+          "--features=fs"
         ],
         "filter": {
-          "name": "main",
-          "kind": "bin"
+          "name": "tree",
+          "kind": "example"
         }
       },
-      "args": [],
+      "args": ["."],
       "cwd": "${workspaceFolder}"
     }
   ]

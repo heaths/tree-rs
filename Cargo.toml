@@ -3,6 +3,7 @@ name = "tree"
 version = "0.1.0"
 edition = "2021"
 authors = ["Heath Stewart (https://github.com/heaths)"]
+description = "Build trees from simple node providers, with optional terminal printing and color support."
 repository = "https://github.com/heaths/tree-rs"
 license = "MIT"
 
@@ -10,4 +11,11 @@ license = "MIT"
 default = []
 fs = []
 
+[[example]]
+name = "tree"
+required-features = ["fs"]
+
 [dependencies]
+
+[dev-dependencies]
+clap = { version = "4.5.16", features = ["cargo", "derive"] }
