@@ -62,11 +62,11 @@ where
         }
     }
 
-    if !f(Some(node), 1) || !node.has_nodes() {
+    if !f(Some(node), 0) || !node.has_nodes() {
         return;
     }
 
-    inner(node, f, 1);
+    inner(node, f, 0);
 
     // // We'd want to sort - or simply pass through - this, so the following algorithm works unconditionally.
     // let mut iter = nodes.into_iter();
