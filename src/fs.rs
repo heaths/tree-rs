@@ -156,11 +156,11 @@ mod tests {
         let nodes = FileSystemNodes::new().unwrap();
 
         assert_eq!(
-            "FileSystemNode { entry: \"src/\" }",
+            "FileSystemNode { path: \"src/\" }",
             &format!("{:?}", &nodes.src_dir)
         );
         assert_eq!(
-            "FileSystemNode { entry: \"Cargo.toml\" }",
+            "FileSystemNode { path: \"Cargo.toml\" }",
             &format!("{:?}", &nodes.manifest_file)
         );
     }
