@@ -8,14 +8,12 @@ repository = "https://github.com/heaths/tree-rs"
 license = "MIT"
 
 [features]
-default = []
+default = ["fs"]
 fs = []
 
 [[example]]
 name = "tree"
 required-features = ["fs"]
-
-[dependencies]
 
 [dev-dependencies]
 clap = { version = "4.5.16", features = ["cargo", "derive"] }
