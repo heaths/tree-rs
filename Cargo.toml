@@ -11,9 +11,5 @@ license = "MIT"
 default = ["fs"]
 fs = []
 
-[[example]]
-name = "tree"
-required-features = ["fs"]
-
-[dev-dependencies]
+[dependencies]
 clap = { version = "4.5.16", features = ["cargo", "derive"] }
