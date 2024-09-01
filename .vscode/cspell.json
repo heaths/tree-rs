@@ -3,7 +3,10 @@
   "language": "en",
   "useGitignore": true,
   "ignorePaths": [
-    ".devcontainer/devcontainer.json",
+    ".devcontainer/",
+    ".github/",
+    ".helix/",
+    ".vscode/",
     "rust-toolchain.toml"
   ],
   "words": [
