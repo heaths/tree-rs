@@ -1,9 +1,8 @@
 # Tree
 
-[![releases](https://img.shields.io/github/v/release/heaths/tree-rs.svg?logo=github)](https://github.com/heaths/tree-rs/releases/latest)[![docs](https://img.shields.io/docsrs/tree?logo=rust)](https://docs.rs/tree)
 [![ci](https://github.com/heaths/tree-rs/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/heaths/tree-rs/actions/workflows/ci.yml)
 
-<!-- TODO -->
+A library for printing tree to the terminal. An implementation is provided by default for file systems that is compatible with some options of the `tree` utility but provides more colorful printing to better view the hierarchy of directories and files.
 
 ## License
 
