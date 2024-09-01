@@ -1,6 +1,11 @@
 {
   "version": "0.2",
   "language": "en",
+  "useGitignore": true,
+  "ignorePaths": [
+    ".devcontainer/devcontainer.json",
+    "rust-toolchain.toml"
+  ],
   "words": [
     "canonicalize",
     "clippy",
