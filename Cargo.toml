@@ -6,6 +6,7 @@ authors = ["Heath Stewart (https://github.com/heaths)"]
 description = "Build trees from simple node providers, with optional terminal printing and color support."
 repository = "https://github.com/heaths/tree-rs"
 license = "MIT"
+publish = false
 
 [features]
 default = ["fs"]
